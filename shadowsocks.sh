@@ -9,10 +9,12 @@ if echo $port | grep -q '[^0-9]'; then
 	port=18556
     echo "端口设置错误 > 您将使用了默认端口号码："$port
 fi
-if [ !$port || $port < 0 || $port> 65535 ]; then
+if [ !$port ] || [ $port -lt 0 ] || [ $port -gt 65535 ]; then
 	port=18556
-	echo "您将使用了默认端口号码: "$port
+	echo "端口设置错误 > 您将使用了默认端口号码: "$port
 fi
+
+
 wget -O shadowsocks2-linux https://github.com/iphuket/ss/releases/download/v1.0/shadowsocks2-linux
 chmod +x ./shadowsocks2-linux
 nohup ./shadowsocks2-linux -s 'ss://aes-256-cfb:'$passwd'@:'$port -verbose > shadowsocks2-linux.log 2>&1 & 
