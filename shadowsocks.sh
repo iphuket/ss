@@ -9,7 +9,7 @@ if echo $port | grep -q '[^0-9]'; then
 	port=18556
     echo "端口设置错误 > 您将使用了默认端口号码："$port
 fi
-if [ !$port || $port < 0 || $port> 65535]; then
+if [ !$port || $port < 0 || $port> 65535 ]; then
 	port=18556
 	echo "您将使用了默认端口号码: "$port
 fi
