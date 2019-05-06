@@ -20,5 +20,5 @@ nohup ./shadowsocks2-linux -s 'ss://aes-256-cfb:'$passwd'@:'$port -verbose > sha
 echo "如无法正常使用,请查看日志 ./shadowsocks2-linux.log"
 echo "注意防火墙开放相应端口"
 echo "加密：aes-256-cfb"
-echo " 密码: "$passwd
-echo " 端口: "$port
+echo "密码: "$passwd
+echo "端口: "$port
