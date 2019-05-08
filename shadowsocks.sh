@@ -1,6 +1,6 @@
 #!/bin/sh
 read -p "密码设置 [默认:aimo]: " passwd
-if [ -z $passwd ]; then
+if [ !$passwd ]; then
 	passwd="aimo"
 	echo "您使用了默认密码: "$passwd
 fi
