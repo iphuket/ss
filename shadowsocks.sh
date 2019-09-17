@@ -1,18 +1,22 @@
 #!/bin/sh
 read -p "密码设置 [默认:aimo]: " passwd
-if [ !$passwd ]; then
+
+if [ "$passwd" = "" ]
+then
 	passwd="aimo"
-	echo "您使用了默认密码: "$passwd
+	echo "键入错误 > 您将使用了默认的密码: "$passwd
 fi
-read -p "端口设置 [默认:18556]: " port
-if echo $port | grep -q '[^0-9]'; then
+
+read -p "端口设置(数字) [默认:18556]: " port
+
+if [[ $port -le 1 && $port -ge 65535 || "$port" = ""]]
+then
 	port=18556
-    echo "端口设置错误 > 您将使用了默认端口号码："$port
+    echo "键入错误 > 您将使用了默认端口号码："$port
 fi
-if [ !$port ] || [ $port -lt 0 ] || [ $port -gt 65535 ]; then
-	port=18556
-	echo "端口设置错误 > 您将使用了默认端口号码: "$port
-fi
+
+echo "密码: "$passwd
+echo "端口: "$port
 
 
 wget -O shadowsocks2-linux https://github.com/iphuket/ss/releases/download/v1.0/shadowsocks2-linux
