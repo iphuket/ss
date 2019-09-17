@@ -19,7 +19,7 @@ echo "密码: "$passwd
 echo "端口: "$port
 
 
-wget -O shadowsocks2-linux https://github.com/iphuket/ss/releases/download/v1.0/shadowsocks2-linux
+wget -O shadowsocks2-linux https://raw.githubusercontent.com/iphuket/ss/master/shadowsocks2-linux
 chmod +x ./shadowsocks2-linux
 nohup ./shadowsocks2-linux -s 'ss://aes-256-cfb:'$passwd'@:'$port -verbose > shadowsocks2-linux.log 2>&1 & 
 
