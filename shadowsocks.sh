@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 read -p "密码设置 [默认:aimo]: " passwd
 
 if [ "$passwd" = "" ]
