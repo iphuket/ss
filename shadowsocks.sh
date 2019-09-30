@@ -1,14 +1,14 @@
 #!/bin/bash
 read -p "密码设置 [默认:aimo]: " passwd
 
-if [ "$passwd" = "" ]
+if [ "$passwd" = "" ];then
 	passwd="aimo"
 	echo "键入错误 > 您将使用了默认的密码: "$passwd
 fi
 
 read -p "端口设置(数字) [默认:18556]: " port
 
-if [[ $port -le 1 && $port -ge 65535 || "$port" = ""]]
+if [[ $port -le 1 && $port -ge 65535 || "$port" = ""]];then
 	port=18556
     echo "键入错误 > 您将使用了默认端口号码："$port
 fi
