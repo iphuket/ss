@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 read -p "密码设置 [默认:aimo]: " passwd
 
 if [ "$passwd" = "" ];then
@@ -15,7 +15,6 @@ fi
 
 echo "密码: "$passwd
 echo "端口: "$port
-
 
 wget -O shadowsocks2-linux https://raw.githubusercontent.com/iphuket/ss/master/shadowsocks2-linux
 chmod +x ./shadowsocks2-linux
